@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% load staticfiles %}
+<title>
+Stations
+</title>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script>
+
+$(document).ready(function(){
+  
+  $("input").change(calTotal);
+});
+
+function calTotal(){
+	var radios = document.getElementsByName("quantity");
+	var x = document.getElementsByClassName("val");
+	var y = document.getElementsByClassName("itemname");
+	var total = 0;
+	items = [];
+	item_quantity =[];
+
+	for (var i = 0; i < radios.length; i++) {   
+	        if (radios[i].value > 0) {
+			total = total + parseInt(radios[i].value)*x[i].innerHTML;			
+			item_quantity.push(radios[i].value);
+			items.push(y[i].innerHTML);
+	        }
+	}
+	var total_val = document.getElementById("total").innerHTML;
+	document.getElementById("total").innerHTML = "Total amount: " + total + "<br> Your cart consists of :" + "<br>";
+	var total_val = "Your cart consists of : " + total;
+	for(var iter =0;iter<items.length;iter++){
+		document.getElementById("total").innerHTML = document.getElementById("total").innerHTML + '<br>'+ "<table><tr><td>" + items[iter] + "</td> <td>" + item_quantity[iter]+"</td></tr>";
+	}
+        document.getElementById("total").innerHTML = document.getElementById("total").innerHTML + "</table>";
+	var inp = document.getElementById("ttl");
+	inp.value= total;
+	return total;
+}
+
+function bookOrder() {
+	var total = calTotal();
+	if(total < {{ minorder }}) {
+		alert('Please order more than the minimum order value');
+		return false;
+	}
+	else{
+		form.action = "/confirm/";
+	}
+}
+
+</script><link rel="stylesheet" href="{% static 'css/order.css' %}" type="text/css" />
+{% endblock %}
+
+{% block content %}
+
+<center>
+<div id="header">
+{% if status == "No " %}
+	Nothing available right now,please try later
+	<a href="">Return to homepage</a>
+	{% else %}
+		Vendor name : {{nameofjoint}}	<br>
+		Average order : {{avgorder}}	<br>
+		Minimum order : {{minorder}}	<br>
+		Menu Type(Jain) : {{jain}} <br><br>
+
+</div>
+<div id="total"></div>
+	
+<form method="post" onsubmit="return bookOrder();" action="/confirm/"> {% csrf_token %}
+	<table>
+<tr><td>Dish Name</td><td>Description</td><td>Rate</td><td>Type</td><td>Quantity</td></tr>
+
+				{% for i in menu_list %}<tr>
+
+					{% for j in i %}
+						<td>
+					{% if forloop.counter > 0 and forloop.counter < 2 %}
+					<div class='itemname'> {{ j }}</div>
+					{% endif %}
+					{% if forloop.counter > 2 and forloop.counter < 4 %}
+					<div class='val'> {{ j }}</div>
+					{% endif %}
+
+					{{ j }}
+					{% endfor %}</td>
+				<td>
+
+				<input id="in" type="number" name="quantity" min="0" value="0"></td>
+				
+				</tr>
+
+				{% endfor %}
+	
+
+
+	</table>
+<input id="ttl" type="hidden" name="totalValue" />
+
+<input id="submit" type="submit" value="Book Order">
+
+</form>
+
+{% endif %}
+</center>
+{% endblock %}

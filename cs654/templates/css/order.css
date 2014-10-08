@@ -1,0 +1,59 @@
+body
+{
+background-image: url('../images/order.jpg');
+background-size:100% 100%;
+background-repeat:no-repeat;
+}
+table {
+	width: 80%;
+	margin: 0;
+	background: #FFFFFF;
+	border: 1px solid #333333;
+	border-collapse: collapse;
+}
+div.val {display:none;}
+div.itemname {display:none;}
+td, th {
+	border-bottom: 1px solid #333333;
+	padding: 6px 16px;
+	text-align: left;
+}
+
+th {
+	background: #EEEEEE;
+}
+
+caption {
+	background: #E0E0E0;
+	margin: 0;
+	border: 1px solid #333333;
+	border-bottom: none;
+	padding: 6px 16px;
+	font-weight: bold;
+}
+
+div.transbox {	
+	opacity:0.7;
+}
+
+#total{
+	position:fixed;
+	background:#FFFFFF;
+	opacity:0.7;
+}
+
+#submit {
+	position:fixed;
+	top:50%;
+	right:2px;
+	height:2.5%;
+}
+
+#in {
+	width:40px;
+}
+
+#header {
+	background:white;
+	opacity:0.7;
+}

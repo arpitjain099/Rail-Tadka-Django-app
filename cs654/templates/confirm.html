@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block head %}
+	{% load staticfiles %}
+	<title>
+		Confirm Order
+	</title>
+	
+	<link rel="stylesheet" href="{% static 'css/confirm.css' %}" type="text/css" />
+	
+  
+{% endblock %}
+
+{% block content %}<!-- begin olark code -->
+<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+0:+new Date};a.P=function(u){
+a.p[u]=new Date-a.p[0]};function s(){
+a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+b.contentWindow[g].open()}catch(w){
+c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('3161-749-10-8871');/*]]>*/</script><noscript><a href="https://www.olark.com/site/3161-749-10-8871/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+<!-- end olark code -->
+<div class="transbox">
+<script id="_webengage_script_tag" type="text/javascript">
+  var _weq = _weq || {};
+  _weq['webengage.licenseCode'] = '~134106632';
+  _weq['webengage.widgetVersion'] = "4.0";
+  
+  (function(d){
+    var _we = d.createElement('script');
+    _we.type = 'text/javascript';
+    _we.async = true;
+    _we.src = (d.location.protocol == 'https:' ? "https://ssl.widgets.webengage.com" : "http://cdn.widgets.webengage.com") + "/js/widget/webengage-min-v-4.0.js";
+    var _sNode = d.getElementById('_webengage_script_tag');
+    _sNode.parentNode.insertBefore(_we, _sNode);
+  })(document);
+</script>
+
+
+<div id='back'>
+<center>
+<!--<img src="{% static 'images/confirm.jpg' %}" width=100% height=100% />-->
+	<h1>Congratulations, you are almost there!</h1>
+	You need to confirm that you are a human and have a valid mobile number<br><br>
+<form action="/confirm/" method="post">
+
+    <!-- ... your form code here ... -->
+	
+    <script type="text/javascript"
+       src="http://www.google.com/recaptcha/api/challenge?k=6LemgfISAAAAAC2aPS21TRVr2YC3-JijGOkgaV4m">
+    </script>
+    <noscript>
+       <iframe src="http://www.google.com/recaptcha/api/noscript?k=6LemgfISAAAAAC2aPS21TRVr2YC3-JijGOkgaV4m"
+           height="300" width="500" frameborder="0"></iframe><br>
+       <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+       </textarea>
+       <input type="hidden" name="recaptcha_response_field"
+           value="manual_challenge">
+    </noscript>
+
+    <!-- ... more of your form code here ... -->
+
+  </form>
+	
+	  
+  <!-- ... more of your HTML content ... -->
+	
+	Please fill in the following details : <br>
+	<form id="station" method="post" action="/final/">{% csrf_token %}
+		<div><input type="text" name="name" placeholder="Name" /></div>
+		<div><input type="text" name="pnr" placeholder="PNR Number" /></div>
+		<div><input type="text" name="mobile" placeholder="Mobile Number" /></div>
+		<div><input type="text" name="comments" placeholder="Special comments to the chef" /></div>
+
+		
+	
+
+	
+<br>You can choose to pay the amount Rs. {{total}} by the following form of payments:
+		<ul>
+			<input type="radio">Cash on Delivery(Available at select stations)</input>
+			<input type="radio">Payment by Debit card</input>
+			<input type="radio">Online payment</input>
+			<input type="radio">Payment by mPesa</input>
+			<input type="radio">Payment by Credit Card</input>
+		</ul><input type="submit" class = "button" value="Book Order" onclick="getResults()" />
+	</form>You should expect a call from the vendor atleast 1hr before the delivery time. 
+	<br><br><br><br><br><br><br><br>Your feedback is really important to us. Please provide us your feedback <a href="mailto:arpitj@railtadka.com">here</a>.
+</center>
+</div>
+</div>
+{% endblock %}

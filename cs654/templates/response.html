@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block head %}
+	{% load staticfiles %}
+	<title>
+		Station enquiry
+	</title>
+	<script>
+		function getResults() {
+		    var radios = document.getElementsByName("station_selection");
+	    
+		    for (var i = 0; i < radios.length; i++) {       
+			if (radios[i].checked) {
+			    //alert(radios[i].value);
+			    break;
+			}
+		    }
+		}
+	</script>
+	<link rel="stylesheet" href="{% static 'css/stationenquiry.css' %}" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<script id="_webengage_script_tag" type="text/javascript">
+  var _weq = _weq || {};
+  _weq['webengage.licenseCode'] = '~134106632';
+  _weq['webengage.widgetVersion'] = "4.0";
+  
+  (function(d){
+    var _we = d.createElement('script');
+    _we.type = 'text/javascript';
+    _we.async = true;
+    _we.src = (d.location.protocol == 'https:' ? "https://ssl.widgets.webengage.com" : "http://cdn.widgets.webengage.com") + "/js/widget/webengage-min-v-4.0.js";
+    var _sNode = d.getElementById('_webengage_script_tag');
+    _sNode.parentNode.insertBefore(_we, _sNode);
+  })(document);
+</script>
+	<div class="transbox">
+		<center><br><br><br>
+			<div class="title">Train Route: </div><br><br>
+			<table>
+				<tr><td>Station Name</td><td>Scheduled Arrival</td><td>Scheduled Departure</td><td>Status</td><td>Delay</td></tr>
+
+				{% for i,y in our_list %}<tr>
+
+					{% for j in i %}
+						<td>
+				    		{{ j }}
+			
+					{% endfor %}</td>
+				
+				</tr>
+
+				{% endfor %}
+
+			</table>
+			<br><br><br>
+			<div class="title">We offer catering services to the following stations:</div><br><br>
+			<form id="station" method="post" action="/order/">{% csrf_token %}
+			<table>
+				<tr><td>Station Name</td><td>Scheduled Arrival</td><td>Scheduled Departure</td><td>Status</td><td>Delay</td></tr>
+
+				{% for i,y in our_list2 %}<tr>
+
+					{% for j in i %}
+						<td>
+				    		{{ j }}
+			
+					{% endfor %}</td>
+				<td>
+
+				<input type="radio" name="station_selection" value = {{ y }}></td>
+				</tr>
+
+				{% endfor %}
+
+			</table>
+			<br><br>
+			<input type="submit" class = "button" value="Check availability" onclick="getResults()" />
+			</form>
+
+	<br><br>
+	<div class="title">You can also book order as per time: </div>
+	<form method="post" action="/order/">{% csrf_token %}
+		<input type="time" name="time"></input>
+		<input type="submit" class = "button" value="Check availability" />
+	</form>
+		</center>
+	</div>
+{% endblock %}

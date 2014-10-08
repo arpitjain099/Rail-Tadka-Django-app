@@ -1,0 +1,155 @@
+ABU ROAD,abr,north
+AGRA CANTT,agc,north
+AGRA FORT,af,north
+AHMADNAGAR,ang,west
+AHMEDABAD JN,adi,west
+AJMER,aii,west
+AKOLA JN,ak,west
+ALLAHABAD JN,ald,north
+AMBALA CANTT JUNCTION,umb,north
+ANAND VIHAR TERMINAL,anvt,north
+ANANTAPUR,atp,north
+ASHOK NAGAR,askn,north
+AURANGABAD,awb,west
+BALASORE,bls,north
+BALHARSHAH,bpq,west
+BANGALORE CY JN,sbc,south
+BANGLORE YASHWANTPURA JN,ypr,south
+BAREILLY,be,north
+BELGAUM,bgm,south
+BETUL,bzu,north
+BHATINDA JUNCTION,bti,north
+BHAWANI MANDI,bwm,north
+BHILWARA,bhl,west
+BHOPAL HABIBGANJ,hbj,north
+BHOPAL JUNCTION,bpl,north
+BHUBANESWAR,bbs,east
+BHUSAVAL JUNCTION,bsl,west
+BIKANER JN,bkn,west
+BILASPUR JN,bsp,north
+BOKARO STL CITY,bksc,east
+CHAKKI BANK,chkb,east
+CHANDIGARH,cdg,north
+CHANDRAPUR,cd,west
+CHENNAI CENTRAL,cd,south
+CHEOKI,mas,north
+COIMBATORE JN,coi,north
+CUDDAPAH,hx,north
+DAUND JN,dd,west
+DEHRADUN,ddn,north
+DELHI,dli,north
+DELHI CANTT,dec,north
+DELHI HAZRAT NIZAMUDDIN,nzm,north
+DELHI S ROHILLA,dee,north
+DHANBAD JN,dhm,east
+DHARMAVARAM JN,dmm,south
+DURG,durg,west
+DURGAPUR,dgr,east
+ERNAKULAM JUNCTION SOUTH,ers,south
+ERNAKULAM TOWN,ern,south
+GANDHIDHAM BG,gimb,north
+GAYA JN,gaya,east
+GONDA JN,gd,east
+GONDIA JN,g,east
+GOOTY,gy,south
+GORAKHPUR,gkp,north
+GUDUR JN,gdr,north
+GULBARGA,gr,west
+GUNTUR JN,gnt,south
+GWALIOR JUNCTION,gwl,north
+HANUMANGARH JN,hmh,north
+HARIDWAR JUNCTION,hw,north
+HOWRAH JN,hwh,east
+HYDERABAD DECAN,hyb,south
+IGATPURI,igp,east
+INDORE JN BG,indb,north
+ITARSI JUNCTION,et,north
+JABALPUR,jbp,north
+JAIPUR,jp,north
+JALANDHAR CANTT,jrc,north
+JALANDHAR CITY,juc,north
+JALGAON JUNCTION,jl,east
+JAMMU TAWI,jat,north
+JHANSI JUNCTION,jhs,north
+JHARSUGUDA JN,jsg,north
+JODHPUR JN,ju,west
+KACHEGUDA,kcg,east
+KANPUR CENTRAL,cnb,north
+KATHGODAM,kgm,north
+KATIHAR JN,kir,east
+KATNI,kte,east
+KHAMMAM,cmt,north
+KHANDWA JUNCTION,knw,north
+KOTA JUNCTION,kota,north
+LALITPUR,lar,north
+LONAVALA,lnl,west
+LUCKNOW,lko,north
+LUCKNOWJN,ljn,north
+LUDHIANA JUNCTION,ldh,north
+MAHESANA JN,msh,west
+MAIHAR,myr,north
+MALDA TOWN,mldt,west
+MANGALORE JUNCTION,majn,south
+MANMAD JUNCTION,mmr,south
+MARWAR JN,mj,west
+MATHURA JUNCTION,mtj,north
+MEERUT CITY,mtc,north
+MEGHNAGAR,mgn,north
+MIRAJ JN,mrj,south
+MORADABAD,mb,north
+MUGHAL SARAI JN,mgs,north
+MUMBAI BANDRA TERMINUS,bdts,west
+MUMBAI BORIVALI,bvi,west
+MUMBAI CENTRAL,bct,west
+MUMBAI CST,cstm,west
+MUMBAI DADAR CENTRAL,dr,west
+MYSORE JN,mys,south
+NAGDA JUNCTION,nad,west
+NAGPUR,ngp,west
+NEW DELHI,ndls,north
+NIZAMABAD,nzb,north
+PALANPUR JN,pnu,north
+PANIPAT JUNCTION,pnp,north
+PANVEL,pnvl,north
+PATHANKOT,ptk,north
+PATHANKOT CANTT,ptkc,north
+PATIALA,pta,north
+PATNA JN,pnbe,east
+PUNE JN,pune,west
+PURI,puri,east
+RAICHUR,rc,east
+RAIGARH,rig,east
+RAIPUR JN,r,east
+RAJA KI MANDI,rkm,north
+RAJAMUNDRY,rjy,north
+RAJKOT JN,rjt,west
+RATLAM JUNCTION,rtm,north
+RATNAGIRI,rn,west
+RAURKELA,rou,east
+RENIGUNTA JN,ru,east
+REWARI,re,east
+ROORKEE,rk,north
+SALEM JN,sa,south
+SATNA,sta,north
+SAUGOR,sgo,north
+SAWAI MADHOPUR JUNCTION,swm,north
+SECUNDERABAD JN,sc,south
+SHORANUR JUNCTION,srr,south
+SOLAPUR JN,sur,south
+SURAT,st,west
+TADEPALLIGUDEM,tdd,south
+TIRUPATI,tpty,south
+TIRUPATTUR JN,tpt,south
+TRIVANDRUM CNTL,tvc,south
+TUNDLA JN,tdl,south
+TUNI,tuni,south
+UDAIPUR,udz,north
+UJJAIN JN,ujn,north
+VADODARA JUNCTION,brc,west
+VALSAD,bl,west
+VAPI,vapi,west
+VARANASI JN,bsb,north
+VASAI ROAD,bsr,west
+VIJAYAWADA JN,bza,south
+VISHAKAPATNAM,vskp,south
+WARANGAL JN,wl,south

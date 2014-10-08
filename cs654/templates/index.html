@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+
+{% block head %}
+		{% load staticfiles %}
+		<title>Rail Tadka</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Searching for Delivery of Food in Trains or Train Food Service? Order your food requirements and we will deliver the same at your seat just like a restaurant." />
+		<meta name="keywords" content="rail tadka,rail,tadka,cs654,tvp,tv prabhakar,arpit jain,shekhar kadyan" />
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/jquery.poptrox.min.js' %}"></script>
+		<script src="{% static 'js/skel.min.js' %}"></script>
+		<script src="{% static 'js/init.js' %}"></script>
+		<script>
+			
+			function foodSearch() {
+				
+				//alert(document.forms["frm1"]["date"].value);
+				if((document.forms["frm1"]["train_number"].value=='' && d!='' || tname!='' && document.forms["frm1"]["date"].value=='') && document.forms["frm1"]["pnr"].value==''){
+					alert("Please enter either Train Number and Date or the PNR number");
+					return false;
+				}
+				else{
+					form.action = "/train/";
+				}
+			}
+			function cancelOrder() {
+				
+				//alert(document.forms["frm1"]["date"].value);
+				if(document.forms["cancelform"]["pnr"].value!=''){
+					alert("Your order with PNR number" + document.forms["cancelform"]["pnr"].value + " has been cancelled");
+					return false;
+				}
+				else{
+					alert("Please enter the PNR number");
+					return false;
+				}
+			}
+		</script>
+			<link rel="stylesheet" href="{% static 'css/skel-noscript.css' %}" type="text/css" />
+			<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"/>
+		
+		<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33185532-1', 'arpitjain.co.in');
+  ga('send', 'pageview');
+
+</script>
+{% endblock %}
+{% block content %}
+<!-- begin olark code -->
+<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+0:+new Date};a.P=function(u){
+a.p[u]=new Date-a.p[0]};function s(){
+a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+b.contentWindow[g].open()}catch(w){
+c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('3161-749-10-8871');/*]]>*/</script><noscript><a href="https://www.olark.com/site/3161-749-10-8871/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+<!-- end olark code -->
+
+
+<script id="_webengage_script_tag" type="text/javascript">
+  var _weq = _weq || {};
+  _weq['webengage.licenseCode'] = '~134106632';
+  _weq['webengage.widgetVersion'] = "4.0";
+  
+  (function(d){
+    var _we = d.createElement('script');
+    _we.type = 'text/javascript';
+    _we.async = true;
+    _we.src = (d.location.protocol == 'https:' ? "https://ssl.widgets.webengage.com" : "http://cdn.widgets.webengage.com") + "/js/widget/webengage-min-v-4.0.js";
+    var _sNode = d.getElementById('_webengage_script_tag');
+    _sNode.parentNode.insertBefore(_we, _sNode);
+  })(document);
+</script>
+
+		<!-- Header -->
+			<header id="header">
+
+				
+					<nav id="nav">
+						<ul>
+							<li><a href="#bookorder">Book Order</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#locations">Locations</a></li>
+							<li><a href="#cancelorder">Cancel Order</a></li>
+							{% if user.is_authenticated %}					
+							<li><a href="/logout/">Logout</a></li>
+							{% else %}
+							<li><a href="/login/">Login</a></li>
+							<li><a href="/register/">Register</a></li>
+							{% endif %}
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</nav>
+
+			</header>
+			
+		<script>function validate(evt) {
+  var theEvent = evt || window.event;
+  var key = theEvent.keyCode || theEvent.which;
+  key = String.fromCharCode( key );
+  var regex = /[0-9]|\./;
+  if( !regex.test(key)) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}</script>
+			<section id="bookorder" class="main style3 secondary">
+				<div class="content container">
+					<!--<header>
+						<h2>Say Hello.</h2>
+						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
+					</header>-->
+					<div class="box container small">
+					
+						{% if user.is_authenticated %}
+						<h1>Hello {{ user.username }}!</h1>
+						{% else %}
+						<h1>Hello Guest!</h1>
+						{% endif %}
+							<form name="frm1" id="pnr_form" method="post" onsubmit="return foodSearch();" action="/train/">{% csrf_token %}
+								<div class="row half">
+									<div class="6u"><input type='text' onkeypress='validate(event)'  name="train_number" placeholder="Train Number" /></div>
+
+									<div class="6u"><input type="date" name="date" min="2014-04-26" value="yyyy-mm-dd" class="input-medium search-query" onkeypress="return false"></div>
+								</div><center>Or</center>
+								<div class="row half">
+									<div class="6u"><input type='text' onkeypress='validate(event)'  name="pnr" placeholder="PNR Number" /></div>
+									
+								</div>
+								<div class="row">
+									<div class="12u">
+										<ul class="actions">
+											<li><input type="submit" class="button" value="Search Food!" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+
+					</div>
+				</div>
+				<a href="#about" class="button style2 down anchored">Next</a>
+			</section>
+		
+
+			<section id="about" class="main style2 right dark fullscreen">
+				<div class="content box style2">
+					<header>
+						<h2>About Us</h2>
+					</header>
+						<p>About 6 billion passengers travel in Indian Railways each year. If anyone of us has traveled they will vouch for the fact that currently the availability of quality food in Indian Trains is something not to be excited about. Rail Tadka solves this very problem for the railway passenger.
+<br>
+It offers a variety of choices to a Railway passenger so that the passengers can order food as per their liking and at their price point while they are travelling. The Rail Tadka automated platform tracks trains in real time across India and ensures that fresh food is delivered to the passenger as per their choice in real time.</p>
+				</div>
+				<a href="#locations" class="button style2 down anchored">Next</a>
+			</section>
+		
+		<section id="locations" class="main style3 primary">
+				<div class="content container">
+					<header>
+						<h2>Locations</h2>
+						<p>We are present in the following cities : </p>
+					</header>
+					<p> If you are a vendor and would to like to work with Rail Tadka, please drop us an <a href="mailto://contactus@railtadka.in">e-mail.</a> <table></table>
+				</div>
+				<a href="#cancelorder" class="button style2 down anchored">Next</a>
+			</section>
+			
+			
+			
+			<section id="cancelorder" class="main style3 secondary">
+				<div class="content container">
+					<header> 
+						<h2>:-(</h2>
+						<p>We are sorry that you are canceling your order. Please fulfil your details in the form below. <br> Kindly note that orders can be cancelled only prior to 1.5 hours of delivery time.<br> We will not be able to provide refunds under any other circumstances. We look forward to serving you on your next travel. </p>
+					</header>
+					<div class="box container small">
+					
+							<form name="cancelform" method="post" action="#" onsubmit="return cancelOrder();">{% csrf_token %}
+								<div class="row half">
+									<div class="6u"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="6u"><input type="text" name="pnr" placeholder="PNR Number" /></div>
+								</div>
+								<div class="row half">
+									<div class="12u"><textarea name="message" placeholder="Reason for cancellation of order." rows="6"></textarea></div>
+								</div>
+								<div class="row">
+									<div class="12u">
+										<ul class="actions">
+											<li><input type="submit" class="button" value="Cancel Order" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+
+					</div>
+				</div>
+				<a href="#contact" class="button style2 down anchored">Next</a>
+			</section>
+			
+			
+			
+			
+		<!-- Contact -->
+			<section id="contact" class="main style3 secondary">
+				<div class="content container">
+					<header>
+						<h2>Say Hello.</h2>
+						<p>Kindly drop us an <a href="mailto:arpitjain099@gmail.com">e-mail</a> or connect via my <a href="http://in.linkedin.com/pub/arpit-jain/2a/128/739/" target="_blank">LinkedIn</a> profile.
+					</header>
+					
+				</div>
+			</section>
+			
+			<footer id="footer">
+			
+				
+					<ul class="actions">
+						<li><a href="https://github.com/arpitjain099" target="_blank"class="fa solo fa-github"><span>GitHub</span></a></li>
+						<li><a href="https://twitter.com/arpitjay099" target="_blank"class="fa solo fa-twitter"><span>Twitter</span></a></li>
+						<li><a href="https://www.facebook.com/arpitjay" target="_blank"class="fa solo fa-facebook"><span>Facebook</span></a></li>
+						<li><a href="http://in.linkedin.com/pub/arpit-jain/2a/128/739/" target="_blank"class="fa solo fa-linkedin-square"><span>LinkedIn</span></a></li>
+						<li><a href="http://www.flickr.com/photos/95582402@N04/sets/" target="_blank"class="fa solo fa-flickr"><span>Flickr</span></a></li>
+						<li><a href="http://instagram.com/arpitjain099" target="_blank"class="fa solo fa-instagram"><span>Instagram</span></a></li>
+	
+					</ul>
+
+				<!-- Menu -->
+					<ul class="menu">
+				
+						<li>Last updated on : 11th Feb'14</li>
+					</ul>
+			 
+			</footer>
+
+	{% endblock %}
